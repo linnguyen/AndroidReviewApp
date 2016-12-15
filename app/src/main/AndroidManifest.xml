@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".ImplicitIntent" />
-
+        <activity android:name=".ExplicitIntent" />
+        <activity android:name=".Fragment"></activity>
     </application>
 
 </manifest>

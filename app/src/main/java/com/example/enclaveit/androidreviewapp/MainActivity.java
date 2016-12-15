@@ -1,5 +1,6 @@
 package com.example.enclaveit.androidreviewapp;
 
+import android.app.*;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-
+     Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView)findViewById(R.id.listView);
 
-        String [] listSyllabus = {"Implicit Intent","Notification", "Service","Fragment","Dialog"};
+        String [] listSyllabus = {"Implicit Intent","Explicit Intent", "Fragment", "Service","Dialog","Broad cast"};
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listSyllabus);
 
@@ -28,8 +29,18 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
                     case 0:
-                        Intent intent = new Intent(MainActivity.this, ImplicitIntent.class);
+                        intent = new Intent(MainActivity.this, ImplicitIntent.class);
                         startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(MainActivity.this, ExplicitIntent.class);
+                        startActivity(intent);
+                         break;
+                    case 2:
+                        intent = new Intent(MainActivity.this, Fragment.class);
+                        startActivity(intent);
+                         break;
+                    default:
                 }
             }
         });
