@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView)findViewById(R.id.listView);
 
-        String [] listSyllabus = {"Implicit Intent","Explicit Intent", "Fragment", "Service","Dialog","Broad cast"};
+        String [] listSyllabus = {"Implicit Intent","Explicit Intent", "Fragment","App phone call", "Service","Dialog","Broad cast"};
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listSyllabus);
 
@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, Fragment.class);
                         startActivity(intent);
                          break;
+                    case 3:
+                        intent = new Intent(MainActivity.this, PhoneCall.class);
+                        startActivity(intent);
+                        break;
                     default:
                 }
             }

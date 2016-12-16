@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.enclaveit.androidreviewapp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +19,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ImplicitIntent" />
         <activity android:name=".ExplicitIntent" />
-        <activity android:name=".Fragment"></activity>
+        <activity android:name=".Fragment" />
+        <activity android:name=".PhoneCall"></activity>
     </application>
 
 </manifest>
